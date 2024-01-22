@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { add, remove } from '../redux/Slice';
 import toast from 'react-hot-toast';
@@ -6,18 +6,18 @@ import toast from 'react-hot-toast';
 const Product = ({ item }) => {
 
   // const [cart, setCart] = useState([])
-  const cart = useSelector((state)=>state.cart);
-  const dispatch=useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
-  const addToCart=()=>{
+  const addToCart = () => {
     dispatch(add(item));
-    console.log("cart ka data :",cart)
+    console.log("cart ka data :", cart)
     toast.success("Item Added To Cart")
   }
 
-  const removeFromCart=()=>{
+  const removeFromCart = () => {
     dispatch(remove(item.id));
-    console.log("cart ka data after removing :",cart);
+    console.log("cart ka data after removing :", cart);
     toast.error("Item Removed");
   }
 
@@ -36,7 +36,7 @@ const Product = ({ item }) => {
       </div>
 
       <div className="h-[180px]">
-        <img src={item.image} className='w-full h-full'/>
+        <img src={item.image} alt='Not found' className='w-full h-full' />
       </div>
 
       <div className="flex justify-between gap-12 items-center w-full mt-5">
@@ -46,29 +46,27 @@ const Product = ({ item }) => {
 
         <div>
           {
-            cart.some((p)=>p.id==item.id)?
-            (
-              <button
-              className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold
-              text-[8px] p-1 px-1 uppercase
-              hover:bg-gray-700
-              hover:text-white transiton duration-300 ease-in" 
-              onClick={removeFromCart}>
-                Remove Item 
-              </button>
-            ):
-            (
-              <button
-              className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold
+            cart.some((p) => p.id === item.id) ?
+              (
+                <button
+                  className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold
               text-[8px] p-1 px-1 uppercase
               hover:bg-gray-700
               hover:text-white transiton duration-300 ease-in"
-              onClick={addToCart}
-              >Add To Cart</button>
-            )
+                  onClick={removeFromCart}>
+                  Remove Item
+                </button>
+              ) :
+              (
+                <button
+                  className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold
+              text-[8px] p-1 px-1 uppercase
+              hover:bg-gray-700
+              hover:text-white transiton duration-300 ease-in"
+                  onClick={addToCart}
+                >Add To Cart</button>
+              )
           }
-          
-
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 import EmptyCart from '../components/EmptyCart';
 
@@ -17,7 +16,7 @@ const Cart = () => {
     <div className='flex'>
       <div className='mt-12 mx-7  flex justify-center items-center'>
         {
-          cart.length != 0 ?
+          cart.length !== 0 ?
             (
               <div className='flex flex-col md:flex md:flex-row justify-betweem items-start w-full h-full mx-3  '>
                 <div className=' w-full items-center md:w-3/4 flex flex-col gap-5 my-3 mx-3  '>
@@ -27,7 +26,7 @@ const Cart = () => {
                     })
                   }
                 </div>
-                <div className=' hidden md:flex flex-col bg-slate-100 rounded m-3 w-1/4 h-72 justify-between '>
+                <div className=' hidden md:flex flex-col bg-slate-100 rounded m-3 w-1/4 h-72 justify-between  '>
                   <div className='flex flex-col gap-5 mx-3'>
                     <h1 className='font-semibold text-lg text-gray-600'>Order Summary</h1>
                     <p className='flex justify-between text-sm text-gray-400'>Total Items <span>{cart.length}</span></p>
@@ -53,7 +52,7 @@ const Cart = () => {
               </div>
             ) :
             (
-              <div className='flex justify-center w-[100vw]'>
+              <div className='flex justify-center w-[95vw] my-4 mr-7'>
                 <EmptyCart/>
               </div>
             )

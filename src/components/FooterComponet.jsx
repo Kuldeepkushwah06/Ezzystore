@@ -1,7 +1,6 @@
 
 import {
   Footer,
-  FooterBrand,
   FooterCopyright,
   FooterDivider,
   FooterIcon,
@@ -19,6 +18,7 @@ function FooterComponet() {
           <div className='sm:flex  justify-between '>
               <img
               src='https://fbcd.co/images/products/71a0cf367add375691cb38e3b9603d56_resize.png'
+              alt='Not Found'
               className='hidden md:block w-32 h-20'
               ></img>
               <p className='text-slate-100 font-bold text-2xl my-6 font-serif mx-2'>EzzyStore</p>

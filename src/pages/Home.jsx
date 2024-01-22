@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
 import bgImage from '../images/home image.png'
 import womenImage from '../images/women.png'
 import menImage from '../images/men.png'
@@ -38,15 +37,15 @@ const Home = () => {
     <div>
 
       <div className='flex justify-center items-center my-12 w-full '>
-        <img src={womenImage} className='w-1/6 h-auto max-w-xs m-2'/>
-        <img src={menImage} className='w-1/6 h-auto max-w-xs m-2'/>
-        <img src={kidsImage} className='w-1/6 h-auto max-w-xs m-2'/>
-        <img src={homeImage} className='w-1/6 h-auto max-w-xs m-2'/>
-        <img src={techImage} className='w-1/6 h-auto max-w-xs m-2'/>
+        <img src={womenImage} className='w-1/6 h-auto max-w-xs m-2' alt='Not found'/>
+        <img src={menImage} className='w-1/6 h-auto max-w-xs m-2' alt='Not found'/>
+        <img src={kidsImage} className='w-1/6 h-auto max-w-xs m-2' alt='Not found'/>
+        <img src={homeImage} className='w-1/6 h-auto max-w-xs m-2' alt='Not found'/>
+        <img src={techImage} className='w-1/6 h-auto max-w-xs m-2' alt='Not found'/>
       </div>
 
        <div className='mt-10'>
-        <img src={bgImage}/>
+        <img src={bgImage} alt='Not found'/>
        </div>
 
        {

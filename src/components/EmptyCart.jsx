@@ -4,11 +4,12 @@ import { NavLink } from 'react-router-dom'
 const EmptyCart = () => {
     return (
         
-            <div className='outline'>
+            <div className='border-2 border-gray-400 rounded-md '>
                 
-                <div className=' w-full flex flex-col justify-center items-center gap-4 outline '>
+                <div className=' flex flex-col justify-center items-center gap-4 m-5 '>
                     <img
                         src='https://www.smartdrugsx.com/assets/img/empty-cart1.png'
+                        alt='Not found'
                         className='w-48'
                     ></img>
                     <div className='flex flex-col justify-center items-center'>

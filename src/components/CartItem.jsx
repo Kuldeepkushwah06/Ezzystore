@@ -1,11 +1,11 @@
 import React from 'react'
 import { MdDeleteSweep } from "react-icons/md";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { remove } from '../redux/Slice';
 import toast from 'react-hot-toast';
 
 const CartItem = ({ item }) => {
-    const  cart  = useSelector((state) => state.cart);
+    // const  cart  = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const removeFromCart = () => {
         dispatch(remove(item.id));
@@ -14,7 +14,7 @@ const CartItem = ({ item }) => {
     return (
         <div className=' flex flex-col md:flex md:flex-row gap-5 justify-center items-center  m-5 md:w-4/5 w-3/5 p-3 text-wrap '>
             <div className=''>
-                <img src={item.image} className=' max-h-40 max-w-40 '></img>
+                <img src={item.image} alt='Not found' className=' max-h-40 max-w-40 '></img>
             </div>
             <div className='flex flex-col justify-between gap-7'>
                 <div className='flex flex-col gap-2'>
